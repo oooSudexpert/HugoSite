@@ -1,0 +1,23 @@
+title:              "Судэксперт"
+baseURL:            "/"
+languageCode:       "ru"
+publishDir:         "public"
+enableRobotsTXT:    true
+disableKinds:       ["404", "taxonomy", "term", "RSS"]
+
+params:
+  subtitle:         "Все виды экспертиз"
+  description:      "Судебная экспертиза и инициативные исследования любого уровня сложности. Рецензирование заключений экспертов."
+  authors:          "Степан Горшенин, Сергей Кежаев, и другие..."
+
+  current_version:  "1.0.0"
+  github_org:       "https://github.com/oooSudexpert"
+
+metaDataFormat:     "yaml"
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+
+

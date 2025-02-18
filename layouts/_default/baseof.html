@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="{{ .Site.LanguageCode }}" data-bs-theme="auto">
+  <head>
+    {{ partial "header" . }}
+  </head>
+  {{ block "body_override" . }}<body>{{ end }}
+    {{ partial "navbar" . }}
+
+    {{ block "main" . }}
+    {{ end }}
+
+    {{ partial "footer" . }}
+    {{ partial "scripts" . }}
+  </body>
+</html>
