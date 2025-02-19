@@ -1,19 +1,25 @@
-title:              "Судэксперт"
-baseURL:            "/"
-languageCode:       "ru"
-publishDir:         "public"
+title:              Судэксперт
+baseURL:            /
+languageCode:       ru
+publishDir:         public
 enableRobotsTXT:    true
-disableKinds:       ["404", "taxonomy", "term", "RSS"]
+disableKinds:       ['404', 'taxonomy', 'term', 'RSS']
 
 params:
-  subtitle:         "Все виды экспертиз"
-  description:      "Судебная экспертиза и инициативные исследования любого уровня сложности. Рецензирование заключений экспертов."
-  authors:          "Степан Горшенин, Сергей Кежаев, и другие..."
+  subtitle:         Все виды экспертиз
+  description:      Судебная экспертиза и инициативные исследования любого уровня сложности. Рецензирование заключений экспертов.
+  authors:          Степан Горшенин, Сергей Кежаев, и другие...
+  contact:
+    phone:          '+79278993666'
+    email:          sud163@yandex.ru
+  social:
+    telegram:       '+79278993666'
+    whatsapp:       '+79278993666'
 
-  current_version:  "1.0.0"
-  github_org:       "https://github.com/oooSudexpert"
+  current_version:  1.0.0
+  github_org:       https://github.com/oooSudexpert
 
-metaDataFormat:     "yaml"
+metaDataFormat:     yaml
 markup:
   goldmark:
     renderer:

@@ -5,5 +5,7 @@
     <loc>//localhost:1313/404.html</loc>
   </url><url>
     <loc>//localhost:1313/</loc>
+  </url><url>
+    <loc>//localhost:1313/contact/</loc>
   </url>
 </urlset>

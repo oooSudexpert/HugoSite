@@ -1,6 +1,6 @@
 ---
-title: "Главная страница"
-description: ""
+title: Главная страница
+description: 
 ---
 
 <div class="text-center py-5">

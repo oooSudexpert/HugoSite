@@ -1,1 +1,15 @@
-@import "../scss/bootstrap.scss"
+$primary: #146c43;
+$secondary: #664d03;
+$success: #520dc2;
+$info: #75b798;
+$warning: #ffda6a;
+$danger: #b02a37;
+$dark: #0a3622;
+
+$font-family-base: 'Roboto', sans-serif;
+$enable-negative-margins: true;
+$grid-gutter-width: 3rem;
+    
+@import "bootstrap_theme";
+
+
