@@ -3,5 +3,7 @@
     <div class="container-xxl bd-gutter masthead-followup">
       {{ .Content }}
     </div>
+    {{ partial "form_callback" . }}
+    {{ partial "form_contact" . }}
   </main>
 {{ end }}

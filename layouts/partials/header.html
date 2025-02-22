@@ -12,6 +12,10 @@
 <meta name="robots" content="{{ . }}">
 {{- end }}
 
+{{ with resources.Get "js/imask.min.js" }}
+  <script src="{{ .RelPermalink }}"></script>
+{{ end }}
+
 {{ with resources.Get "css/main.scss" }}
   {{ $opts := dict
     "enableSourceMap" (not hugo.IsProduction)
