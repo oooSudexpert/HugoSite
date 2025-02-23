@@ -13,7 +13,7 @@
     });
     var forms = document.querySelectorAll(".contact-form");
     Array.prototype.slice.call(forms).forEach(function(form) {
-      form.addEventListener("submit", function(event) {
+      form.addEventListener("submit", async function(event) {
         event.preventDefault();
         event.stopPropagation();
         if (form.checkValidity()) {
@@ -24,7 +24,7 @@
           if (inputMessage !== null) {
             message = inputMessage.value;
           }
-          fetchMessage(city, phone, message).then((response) => {
+          await fetchMessage(city, phone, message).then((response) => {
             if (response.status == 200) {
               alert(successMessage);
               form.classList.remove("was-validated");

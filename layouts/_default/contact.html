@@ -3,7 +3,7 @@
     <div class="container-xxl bd-gutter masthead-followup">
       {{ .Content }}
     </div>
-    {{ partial "form_callback" . }}
-    {{ partial "form_contact" . }}
+    {{ partial "form_contact" (dict "ShowMessageInput" false "City" .Site.Params.city) }}
+    {{ partial "form_contact" (dict "ShowMessageInput" true "City" .Site.Params.city) }}
   </main>
 {{ end }}
