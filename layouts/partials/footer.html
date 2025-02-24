@@ -1,19 +1,9 @@
 <footer class="footer py-4 py-md-5">
 
 </footer>
-{{ with resources.Get "js/main.js" }}
-  {{ $opts := dict
-    "minify" hugo.IsProduction
-    "sourceMap" (cond hugo.IsProduction "" "external")
-    "targetPath" "js/main.js"
-  }}
-  {{ with . | js.Build $opts }}
-    {{ if hugo.IsProduction }}
-      {{ with . | fingerprint }}
-        <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
-      {{ end }}
-    {{ else }}
-      <script src="{{ .RelPermalink }}"></script>
-    {{ end }}
-  {{ end }}
-{{ end }}
+
+{{ $imaskJs := resources.Get "js/imask.min.js" }}
+<script src="{{ $imaskJs.Permalink }}"></script>
+
+{{ $mainJs := resources.Get "js/main.js" | js.Build "js/main.js" | minify | fingerprint }}
+<script src="{{ $mainJs.Permalink }}"></script>

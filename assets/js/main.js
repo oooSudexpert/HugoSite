@@ -41,7 +41,8 @@
   var inputs = document.querySelectorAll('[name="Phone"]');
   Array.prototype.slice.call(inputs)
   .forEach(function (inputPhone) {
-    IMask(inputPhone, maskOptions); // https://imask.js.org/
+    var mask = IMask(inputPhone, maskOptions); // https://imask.js.org/
+    inputPhone.addEventListener('focus', () => mask.updateValue());
   });
 
   var forms = document.querySelectorAll('.contact-form');

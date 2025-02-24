@@ -12,24 +12,5 @@
 <meta name="robots" content="{{ . }}">
 {{- end }}
 
-{{ with resources.Get "js/imask.min.js" }}
-  <script src="{{ .RelPermalink }}"></script>
-{{ end }}
-
-{{ with resources.Get "css/main.scss" }}
-  {{ $opts := dict
-    "enableSourceMap" (not hugo.IsProduction)
-    "outputStyle" (cond hugo.IsProduction "compressed" "expanded")
-    "targetPath" "css/main.css"
-    "transpiler" "libsass"
-  }}
-  {{ with . | toCSS $opts }}
-    {{ if hugo.IsProduction }}
-      {{ with . | fingerprint }}
-        <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-      {{ end }}
-    {{ else }}
-      <link rel="stylesheet" href="{{ .RelPermalink }}">
-    {{ end }}
-  {{ end }}
-{{ end }}
+{{ $style := resources.Get "css/main.scss" | css.Sass | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $style.Permalink }}">
