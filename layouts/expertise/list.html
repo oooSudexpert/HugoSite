@@ -1,0 +1,13 @@
+{{ define "main" }}
+<main>
+  <div class="container-xxl">
+    {{ .Content }}
+    <ul>
+      {{ range where site.RegularPages "Section" "expertise" }}
+        {{ .Render "card" }}
+      {{ end }}
+    </ul>
+    list expertise
+  </div>  
+</main>
+{{ end }}

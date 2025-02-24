@@ -3,11 +3,14 @@
 <meta name="description" content="{{ .Page.Params.description | default .Site.Params.description | markdownify }}">
 <meta name="author" content="{{ .Site.Params.authors }}">
 <meta name="generator" content="Hugo {{ hugo.Version }}">
-
-<title>{{ if .IsHome }}{{ .Site.Title | markdownify }} · {{ .Site.Params.subtitle | markdownify }}{{ else }}{{ .Title | markdownify }} {{ end }}</title>
-
+<title>
+    {{ if .IsHome }}
+    {{ .Site.Title | markdownify }} · {{ .Site.Params.subtitle | markdownify }}
+    {{ else }}
+    {{ .Title | markdownify }} 
+    {{ end }}
+</title>
 <link rel="canonical" href="{{ .Permalink }}">
-
-{{ with .Params.robots -}}
+{{ with .Params.robots }}
 <meta name="robots" content="{{ . }}">
-{{- end }}
+{{ end }}

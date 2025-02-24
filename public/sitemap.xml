@@ -8,6 +8,8 @@
   </url><url>
     <loc>//localhost:1313/contacts/</loc>
   </url><url>
+    <loc>//localhost:1313/expertise/handwriting/</loc>
+  </url><url>
     <loc>//localhost:1313/expertise/</loc>
   </url>
 </urlset>

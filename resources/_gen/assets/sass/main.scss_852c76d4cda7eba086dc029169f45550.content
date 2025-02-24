@@ -10425,4 +10425,13 @@ a:hover .bi.bi-whatsapp {
   color: #43d854 !important;
 }
 
+.breadcrumb a {
+  color: inherit;
+}
+
+.breadcrumb a:hover {
+  color: #146c43;
+  text-decoration: underline !important;
+}
+
 /*# sourceMappingURL=main.css.map */

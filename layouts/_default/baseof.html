@@ -8,17 +8,20 @@
     <main class="flex-grow-1 flex-shrink-0">
 
       {{ partial "navbar" . }}
-      
-      <div class="container-xxl bd-gutter masthead-followup">
+
+      {{ if not .IsNode }}
+      {{ partial "breadcrumbs" . }}
+      {{ end }}      
+
+      <div class="container-xxl">
         <div class="text-center py-5">
           <h1 class="display-1">{{ .Title }}</h1>
           <h2>{{ .Description }}</h2>
         </div>
-      </div>
+      </div>      
 
       {{ block "main" . }}
       {{ end }}
-
     </main>
 
     <footer class="flex-grow-0 flex-shrink-0 py-3 bg-light border-top text-muted">

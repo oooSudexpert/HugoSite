@@ -89,3 +89,14 @@ a:hover .bi.bi-telegram {
 a:hover .bi.bi-whatsapp {
     color: #43d854 !important;
 }
+
+
+.breadcrumb {
+    a {
+        color: inherit;        
+        &:hover {
+            color: $primary;
+            text-decoration: underline!important;
+        }
+    }
+}

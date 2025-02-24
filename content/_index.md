@@ -1,4 +1,5 @@
 ---
-title: Главная страница
+title: Главная
 description: Самая главная страница.
+layout: home
 ---

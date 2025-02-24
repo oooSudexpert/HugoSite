@@ -1,6 +1,6 @@
 {{ define "main" }}
   <main>
-    <div class="container-xxl bd-gutter masthead-followup">
+    <div class="container-xxl">
       {{ .Content }}
       {{ partial "form_contact" (dict "ShowMessageInput" false "City" .Site.Params.city) }}
       {{ partial "form_contact" (dict "ShowMessageInput" true "City" .Site.Params.city) }}

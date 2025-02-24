@@ -1,37 +1,37 @@
-{{- $page := .page }}
-{{- $menuID := .menuID }}
+{{ $page := .page }}
+{{ $menuID := .menuID }}
 
-{{- with index site.Menus $menuID }}
+{{ with index site.Menus $menuID }}
   <nav id="top-menu-block" class="overflow-auto" aria-label="Основная">
     <ul class="navbar-nav flex-row text-nowrap">
-      {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+      {{ partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
     </ul>
   </nav>
-{{- end }}
+{{ end }}
 
-{{- define "partials/inline/menu/walk.html" }}
-  {{- $page := .page }}
-  {{- range .menuEntries }}
-    {{- $attrs := dict "href" .URL "class" "nav-link p-2"}}
-    {{- if $page.IsMenuCurrent .Menu . }}
-      {{- $attrs = merge $attrs (dict "class" "nav-link p-2 active" "aria-current" "page") }}
-    {{- else if $page.HasMenuCurrent .Menu .}}
-      {{- $attrs = merge $attrs (dict "class" "nav-link p-2 ancestor" "aria-current" "true") }}
-    {{- end }}
-    {{- $name := .Name }}
-    {{- with .Identifier }}
-      {{- with T . }}
-        {{- $name = . }}
-      {{- end }}
-    {{- end }}
+{{ define "partials/inline/menu/walk.html" }}
+  {{ $page := .page }}
+  {{ range .menuEntries }}
+    {{ $attrs := dict "href" .URL "class" "nav-link p-2"}}
+    {{ if $page.IsMenuCurrent .Menu . }}
+      {{ $attrs = merge $attrs (dict "class" "nav-link p-2 active" "aria-current" "page") }}
+    {{ else if $page.HasMenuCurrent .Menu . }}
+      {{ $attrs = merge $attrs (dict "class" "nav-link p-2 ancestor" "aria-current" "true") }}
+    {{ end }}
+    {{ $name := .Name }}
+    {{ with .Identifier }}
+      {{ with T . }}
+        {{ $name = . }}
+      {{ end }}
+    {{ end }}
     <li class="nav-item">
       <a
-        {{- range $k, $v := $attrs }}
-          {{- with $v }}
-            {{- printf " %s=%q" $k $v | safeHTMLAttr }}
-          {{- end }}
-        {{- end -}}
+        {{ range $k, $v := $attrs }}
+          {{ with $v }}
+            {{ printf " %s=%q" $k $v | safeHTMLAttr }}
+          {{ end }}
+        {{ end }}
       >{{ $name }}</a>
     </li>
-  {{- end }}
-{{- end }}
+  {{ end }}
+{{ end }}
