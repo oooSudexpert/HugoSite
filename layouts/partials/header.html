@@ -11,6 +11,3 @@
 {{ with .Params.robots -}}
 <meta name="robots" content="{{ . }}">
 {{- end }}
-
-{{ $style := resources.Get "css/main.scss" | css.Sass | resources.Minify | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $style.Permalink }}">

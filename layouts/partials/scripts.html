@@ -1,1 +1,5 @@
-<script></script>
+{{ $imaskJs := resources.Get "js/imask.min.js" }}
+<script src="{{ $imaskJs.Permalink }}"></script>
+
+{{ $mainJs := resources.Get "js/main.js" | js.Build "js/main.js" | minify | fingerprint }}
+<script src="{{ $mainJs.Permalink }}"></script>
