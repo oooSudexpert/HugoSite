@@ -1,8 +1,8 @@
 ---
 title: Контакты
-layout: contact
+layout: contacts
 description: Как с нами связаться
-url: /contact
+url: /contacts
 ---
 
 <div class="text-center py-5">

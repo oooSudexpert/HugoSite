@@ -20,11 +20,17 @@ params:
   current_version:  1.0.0
   github_org:       https://github.com/oooSudexpert
 
+menus:
+  main:
+  - name:          Главная
+    pageRef:       /
+    weight:        10
+  - name:          Контакты
+    pageRef:       /contacts
+    weight:        20
+
 metaDataFormat:     yaml
 markup:
   goldmark:
     renderer:
       unsafe: true
-
-
-

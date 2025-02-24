@@ -4,13 +4,23 @@
     {{ partial "header" . }}
     {{ partial "styles" . }}
   </head>
-  {{ block "body_override" . }}<body>{{ end }}
-    {{ partial "navbar" . }}
+  <body class="d-flex flex-column min-vh-100">
+    <main class="flex-grow-1 flex-shrink-0">
 
-    {{ block "main" . }}
-    {{ end }}
+      {{ partial "navbar" . }}
 
-    {{ partial "footer" . }}
+      {{ block "main" . }}
+      {{ end }}
+
+    </main>
+
+    <footer class="flex-grow-0 flex-shrink-0 py-3 bg-light border-top text-muted">
+
+      {{ partial "footer" . }}
+
+    </footer>
+
     {{ partial "scripts" . }}
+
   </body>
 </html>
