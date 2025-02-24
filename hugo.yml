@@ -25,9 +25,12 @@ menus:
   - name:          Главная
     pageRef:       /
     weight:        10
+  - name:          Услуги
+    pageRef:       /expertise
+    weight:        20
   - name:          Контакты
     pageRef:       /contacts
-    weight:        20
+    weight:        30
 
 metaDataFormat:     yaml
 markup:
