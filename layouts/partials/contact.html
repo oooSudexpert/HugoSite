@@ -1,0 +1,16 @@
+{{ $sizeIcon := "24" }}
+
+<a href="https://t.me/{{ .Site.Params.social.telegram }}" class="p-2" target="_blank">
+  {{ partial "icons/telegram.svg" (dict "width" $sizeIcon "height" $sizeIcon "class" "bi bi-telegram") }}
+</a>
+<a href="https://wa.me/{{ .Site.Params.social.whatsapp }}" class="p-2" target="_blank">
+  {{ partial "icons/whatsapp.svg" (dict "width" $sizeIcon "height" $sizeIcon "class" "bi bi-whatsapp") }}
+</a>
+<a href="mailto:{{ .Site.Params.contact.email }}" class="p-2">
+  {{ partial "icons/envelope.svg" (dict "width" $sizeIcon "height" $sizeIcon "class" "bi bi-envelope") }}
+  <span class="ps-1 d-none d-md-inline-block">{{ .Site.Params.contact.email }}</span>
+</a>
+<a href="tel:{{ .Site.Params.Contact.Phone }}" class="p-2" target="_blank">
+  {{ partial "icons/telephone.svg" (dict "width" $sizeIcon "height" $sizeIcon "class" "bi bi-telephone") }}
+  <span class="ps-1 d-none d-sm-inline-block">{{ .Site.Params.contact.phone }}</span>
+</a>
