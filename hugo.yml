@@ -25,18 +25,30 @@ params:
   current_version:  1.0.0
   github_org:       https://github.com/oooSudexpert
 
+taxonomies:
+  service: services
+  tag: tags
+
+permalinks:
+  page:    
+    posts: /articles/:year/:month/:slug/
+    services: /services/:slug/
+  section:
+    posts: /articles/   
+  services: /services/:slug/
+
 menus:
   main:
   - name:          Главная
     pageRef:       /
     weight:        10
   - name:          Услуги
-    pageRef:       /expertise
+    pageRef:       /services
     weight:        20
   - name:          Статьи
-    pageRef:       /articles
+    pageRef:       /posts
     weight:        30
   - name:          Контакты
-    pageRef:       /contacts
+    pageRef:       /contact
     weight:        40
 

@@ -1,0 +1,4 @@
+---
+title: Автотехническая
+slug: autotechnical
+---

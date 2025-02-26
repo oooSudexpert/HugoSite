@@ -1,7 +1,7 @@
 {{ define "main" }}
-{{ "<!-- default/home.html -->" | safeHTML }}
+{{ "<!-- default/taxonomy.html -->" | safeHTML }}
   <div class="{{ .Site.Params.container }}">
-    {{ .Content }}
+    {{ .Content }}    
     {{ range .Pages }}
     <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
     {{ end }}

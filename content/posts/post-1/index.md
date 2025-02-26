@@ -2,7 +2,9 @@
 title: Первая экспертиза
 description: Первый блин комом.
 summary: Это просто сказка
-categories: 
+date: 2025-02-26
+slug: the-first-examination
+services: 
   - Автотехническая
 tags:
   - Автомобиль
