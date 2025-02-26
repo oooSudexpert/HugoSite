@@ -1,5 +1,6 @@
 {{ define "main" }}
-  <main class="my-auto p-5" id="content">
+{{ "<!-- default/404.html -->" | safeHTML }}
+  <div class="{{ .Site.Params.container }}">
     {{ .Content }}
-  </main>
+  </div>  
 {{ end }}

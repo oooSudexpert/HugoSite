@@ -12,6 +12,9 @@ $grid-gutter-width: 3rem;
     
 @import "bootstrap_theme";
 
+html {
+    overflow-y:scroll;
+}
 
 html, body {
     min-width: 320px;
@@ -100,5 +103,19 @@ a:hover .bi.bi-whatsapp {
             color: $primary;
             text-decoration: underline!important;
         }
+    }
+}
+
+.contact-form {
+    position: relative;
+    &> .robot-text {
+        position: absolute;
+        top: -2px;
+        left: -10px;
+        width: 0;
+        height: 0;
+        overflow: hidden!important;
+        border: 0;
+        padding: 0;
     }
 }

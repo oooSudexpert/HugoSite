@@ -1,8 +1,6 @@
 {{ define "main" }}
-  <main>
-    <div class="{{ .Site.Params.container }}">
-      {{ .Content }}
-      single expertise
-    </div>    
-  </main>
+{{ "<!-- expertise/single.html -->" | safeHTML }}
+  <div class="{{ .Site.Params.container }}">
+    {{ .Content }}
+  </div>  
 {{ end }}

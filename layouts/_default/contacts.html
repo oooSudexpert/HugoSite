@@ -1,10 +1,9 @@
 {{ define "main" }}
-  <main>
-    <div class="{{ .Site.Params.container }}">
-      {{ .Content }}
-      {{ partial "contactform" (dict "ShowMessageInput" false "City" .Site.Params.city) }}
-      {{ partial "contactform" (dict "ShowMessageInput" true "City" .Site.Params.city) }}      
-    </div>
-    {{ partial "yandexmap" . }}
-  </main>
+{{ "<!-- default/contacts.html -->" | safeHTML }}
+  <div class="{{ .Site.Params.container }}">
+    {{ .Content }}
+    {{ partial "contactform" (dict "ShowMessageInput" false "City" .Site.Params.city) }}
+    {{ partial "contactform" (dict "ShowMessageInput" true "City" .Site.Params.city) }}      
+  </div>
+  {{ partial "yandexmap" . }}
 {{ end }}

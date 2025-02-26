@@ -3,6 +3,9 @@
 <meta name="description" content="{{ .Page.Params.description | default .Site.Params.description | markdownify }}">
 <meta name="author" content="{{ .Site.Params.authors }}">
 <meta name="generator" content="Hugo {{ hugo.Version }}">
+{{ with .Params.robots }}
+<meta name="robots" content="{{ . }}">
+{{ end }}
 <title>
     {{ if .IsHome }}
     {{ .Site.Title | markdownify }} · {{ .Site.Params.subtitle | markdownify }}
@@ -12,6 +15,4 @@
 </title>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="{{ .Permalink }}">
-{{ with .Params.robots }}
-<meta name="robots" content="{{ . }}">
-{{ end }}
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400&amp;display=swap" rel="stylesheet">

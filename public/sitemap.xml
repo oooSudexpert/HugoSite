@@ -8,7 +8,11 @@
   </url><url>
     <loc>//localhost:1313/contacts/</loc>
   </url><url>
+    <loc>//localhost:1313/articles/article-1/</loc>
+  </url><url>
     <loc>//localhost:1313/expertise/handwriting/</loc>
+  </url><url>
+    <loc>//localhost:1313/articles/</loc>
   </url><url>
     <loc>//localhost:1313/expertise/</loc>
   </url>

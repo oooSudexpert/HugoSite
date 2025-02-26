@@ -1,11 +1,9 @@
 {{ define "main" }}
-<main>
+{{ "<!-- default/list.html -->" | safeHTML }}
   <div class="{{ .Site.Params.container }}">
     {{ .Content }}
     {{ range .Pages }}
     <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
     {{ end }}
-    list
-  </div>  
-</main>
+</div>  
 {{ end }}

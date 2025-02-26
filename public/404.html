@@ -6,6 +6,9 @@
 <meta name="description" content="Попробуйте начать с главной страницы сайта.">
 <meta name="author" content="Степан Горшенин, Сергей Кежаев, и другие...">
 <meta name="generator" content="Hugo 0.144.2">
+
+<meta name="robots" content="noindex,follow">
+
 <title>
     
     404 - Страница не найдена 
@@ -13,9 +16,7 @@
 </title>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="//localhost:1313/404.html">
-
-<meta name="robots" content="noindex,follow">
-
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400&amp;display=swap" rel="stylesheet">
     
   
   
@@ -26,9 +27,11 @@
  
   </head>
   <body class="d-flex flex-column min-vh-100">
-    <main class="flex-grow-1 flex-shrink-0">
+    <div class="flex-grow-1 flex-shrink-0">
+      <header>
 
-      <header role="navigation" class="navbar navbar-dark">
+        <!-- partials/navbar.html -->
+<div class="navbar navbar-dark">
   <div class="container d-inline-flex px-0">
     <a class="navbar-brand d-flex align-items-center" href="/">
       <img src="/images/sudexpert_logo_white.svg" width="48" height="48">
@@ -129,6 +132,24 @@
           
         
           
+             href="/articles/"
+          
+        
+      >Статьи</a>
+    </li>
+  
+    
+    
+    
+    
+    <li class="nav-item">
+      <a
+        
+          
+             class="nav-link p-2"
+          
+        
+          
              href="/contacts/"
           
         
@@ -142,10 +163,11 @@
 
 
   </div>
-</header>
+</div>
 
-      
-      <div class="container">
+        
+        <!-- partials/breadcrumb.html -->
+<div class="container">
   <nav style="--bs-breadcrumb-divider: '>';" aria-label="Хлебные крошки">
     <ol class="breadcrumb p-2">
       
@@ -156,21 +178,25 @@
   </nav>
 </div>
 
-            
+              
 
-      <div class="container">
-        <div class="text-center py-5">
-          <h1 class="display-1">404 - Страница не найдена</h1>
-          <h2>Попробуйте начать с главной страницы сайта.</h2>
-        </div>
-      </div>      
-
-      
-  <main class="my-auto p-5" id="content">
+        <div class="container">
+          <div class="text-center py-5">
+            <h1 class="display-1">404 - Страница не найдена</h1>
+            <h2>Попробуйте начать с главной страницы сайта.</h2>
+          </div>
+        </div>    
+      </header>  
+      <main class="main-page">
+        
+<!-- default/404.html -->
+  <div class="container">
     
-  </main>
+  </div>  
 
-    </main>
+        <!-- ooo {{ .File.Filename }} -->
+      </main>
+    </div>
 
     <footer class="flex-grow-0 flex-shrink-0 py-3 bg-light border-top text-muted">
 

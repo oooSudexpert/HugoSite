@@ -1,8 +1,6 @@
 {{ define "main" }}
-  <main>
-    <div class="{{ .Site.Params.container }}">
-      {{ .Content }}
-      single
-    </div>    
-  </main>
+{{ "<!-- default/single.html -->" | safeHTML }}
+  <div class="{{ .Site.Params.container }}">
+    {{ .Content }}
+  </div>    
 {{ end }}

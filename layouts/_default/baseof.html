@@ -4,33 +4,28 @@
     {{ partial "header" . }}
     {{ partial "styles" . }}
   </head>
-  <body class="d-flex flex-column min-vh-100">
-    <main class="flex-grow-1 flex-shrink-0">
-
-      {{ partial "navbar" . }}
-
-      {{ if not .IsNode }}
-      {{ partial "breadcrumbs" . }}
-      {{ end }}      
-
-      <div class="{{ .Site.Params.container }}">
-        <div class="text-center py-5">
-          <h1 class="display-1">{{ .Title }}</h1>
-          <h2>{{ .Description }}</h2>
-        </div>
-      </div>      
-
-      {{ block "main" . }}
-      {{ end }}
-    </main>
-
+  <body class="d-flex flex-column min-vh-100">    
+    <div class="flex-grow-1 flex-shrink-0">
+      <header>
+        {{ partial "navbar" . }}
+        {{ if not .IsNode }}
+        {{ partial "breadcrumb" . }}
+        {{ end }}  
+        <div class="{{ .Site.Params.container }}">
+          <div class="text-center py-5">
+            <h1 class="display-1">{{ .Title }}</h1>
+            <h2>{{ .Description }}</h2>
+          </div>
+        </div>    
+      </header>  
+      <main class="main-{{ .Type }}">
+        {{ block "main" . }}
+        {{ end }}        
+      </main>
+    </div>
     <footer class="flex-grow-0 flex-shrink-0 py-3 bg-light border-top text-muted">
-
       {{ partial "footer" . }}
-
     </footer>
-
     {{ partial "scripts" . }}
-
   </body>
 </html>
