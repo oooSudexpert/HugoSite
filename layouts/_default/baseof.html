@@ -13,7 +13,7 @@
       {{ partial "breadcrumbs" . }}
       {{ end }}      
 
-      <div class="container-xxl">
+      <div class="{{ .Site.Params.container }}">
         <div class="text-center py-5">
           <h1 class="display-1">{{ .Title }}</h1>
           <h2>{{ .Description }}</h2>

@@ -1,0 +1,57 @@
+<div id="YandexMap" data-latitude="{{ .Site.Params.map.latitude }}" data-longitude="{{ .Site.Params.map.longitude }}" style="height:400px"></div>
+<script src="https://api-maps.yandex.ru/v3/?apikey=af3a93e9-9a96-417a-af78-0e00337acf41&lang=ru_RU"></script>
+<script>
+
+    initMap();
+
+    async function initMap() {
+
+        window.map = null;
+
+        await ymaps3.ready;
+
+        const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapControls } = ymaps3;
+        
+        const {YMapDefaultMarker} = await ymaps3.import('@yandex/ymaps3-markers@0.0.1');
+        const { YMapZoomControl } = await ymaps3.import('@yandex/ymaps3-controls@0.0.1');        
+        const yandexMapContainer = document.getElementById('YandexMap');        
+        var latitude = yandexMapContainer.dataset.latitude.replace(',', '.');
+        var longitude = yandexMapContainer.dataset.longitude.replace(',', '.');
+
+        const map = new YMap(
+            yandexMapContainer,
+            {
+                location: {
+                    center: [longitude, latitude],
+                    zoom: 12
+                }
+            },
+            [
+              new YMapDefaultSchemeLayer({}),
+              new YMapDefaultFeaturesLayer({ zIndex: 1800 })
+            ]
+        );        
+
+        const marker = new YMapDefaultMarker(
+            {
+            coordinates: [longitude, latitude],
+            title: 'Судэксперт',
+            subtitle: 'Экспертиза и оценка',
+            color: '#146c43',
+            size: 'normal',
+            iconName: 'fallback'
+            }
+        );   
+
+        const controls = new YMapControls({ position: 'right' });
+        controls.addChild(
+            new YMapZoomControl({
+                easing: 'linear'
+            })
+        );          
+
+        map.addChild(marker)
+            .addChild(controls);
+    }
+    
+</script>

@@ -1,9 +1,10 @@
 {{ define "main" }}
   <main>
-    <div class="container-xxl">
+    <div class="{{ .Site.Params.container }}">
       {{ .Content }}
-      {{ partial "form_contact" (dict "ShowMessageInput" false "City" .Site.Params.city) }}
-      {{ partial "form_contact" (dict "ShowMessageInput" true "City" .Site.Params.city) }}
+      {{ partial "contactform" (dict "ShowMessageInput" false "City" .Site.Params.city) }}
+      {{ partial "contactform" (dict "ShowMessageInput" true "City" .Site.Params.city) }}      
     </div>
+    {{ partial "yandexmap" . }}
   </main>
 {{ end }}

@@ -16,6 +16,10 @@ params:
   social:
     telegram:       '+79278993666'
     whatsapp:       '+79278993666'
+  map:
+    latitude:       53.544781
+    longitude:      49.347234
+  container:          'container'
 
   current_version:  1.0.0
   github_org:       https://github.com/oooSudexpert
