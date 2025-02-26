@@ -3,7 +3,8 @@ baseURL:            /
 languageCode:       ru
 publishDir:         public
 enableRobotsTXT:    true
-disableKinds:       ['404', 'taxonomy', 'term', 'RSS']
+disableKinds:       ['404', 'RSS']
+metaDataFormat:     yaml
 
 params:
   city:             Тольятти
@@ -39,8 +40,3 @@ menus:
     pageRef:       /contacts
     weight:        40
 
-metaDataFormat:     yaml
-markup:
-  goldmark:
-    renderer:
-      unsafe: true

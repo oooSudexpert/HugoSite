@@ -2,5 +2,8 @@
 {{ "<!-- default/404.html -->" | safeHTML }}
   <div class="{{ .Site.Params.container }}">
     {{ .Content }}
+    <p>
+      Попробуйте начать с  <a href="{{ .Site.Home.RelPermalink }}">  главной страницы</a> сайта.
+    </p>
   </div>  
 {{ end }}
