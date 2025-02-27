@@ -1,0 +1,24 @@
+{{/*  {{ define "title_override" }}
+  {{ with .Resources.GetMatch "banner*" }}
+  <div class="service-banner" style="background-image: url({{.RelPermalink}})" >    
+  {{ end }}
+  <div class="{{ .Site.Params.container }}  d-flex">
+    <div class="text-center bg-light  bg-opacity-75 mx-auto my-auto p-4">
+{{ end }}  */}}
+{{ define "main" }}
+{{ "<!-- services/terms.html -->" | safeHTML }}
+  <div class="{{ .Site.Params.container }}">
+    <div class="gallery"> 
+    {{ range .Pages }}      
+      <div class="gallery-card">        
+        <h3><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
+        {{ with .Resources.GetMatch "banner*" }}
+          {{ with .Resize "400x" }}
+            <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="">
+          {{ end }}
+        {{ end }}
+      </div>
+    {{ end }}
+    </div>
+  </div> 
+{{ end }}

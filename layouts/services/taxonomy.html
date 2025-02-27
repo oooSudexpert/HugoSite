@@ -1,0 +1,16 @@
+{{ define "title_override" }}
+  {{ with .Resources.GetMatch "banner*" }}
+  <div class="service-banner" style="background-image: url({{.RelPermalink}})" >    
+  {{ end }}
+  <div class="{{ .Site.Params.container }}  d-flex">
+    <div class="text-center bg-light  bg-opacity-75 mx-auto my-auto p-4">
+{{ end }}
+
+{{ define "main" }}
+{{ "<!-- services/taxonomy.html -->" | safeHTML }}
+  <div class="{{ .Site.Params.container }}">
+    {{ range .Pages }}
+    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+    {{ end }}
+  </div> 
+{{ end }}

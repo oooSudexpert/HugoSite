@@ -1,17 +1,17 @@
 ---
-title: Первая экспертиза
-description: Первый блин комом.
-summary: Это просто сказка
-date: 2025-02-26
-slug: the-first-examination
+title: Вторая экспертиза
+description: Второй блин комом.
+summary: Это просто волшебство
+date: 2025-02-27
+slug: the-econd-examination
 services: 
-  - Автотехническая
+  - Строительно-техническая
 tags:
-  - Автомобиль
-  - ДТП
+  - Жилой дом
+  - Ремонт
 ---
 
-![image alt text](banner.jpeg)
+
 
 II. Требования, которым должно отвечать жилое помещение
 

@@ -52,3 +52,9 @@ menus:
     pageRef:       /contact
     weight:        40
 
+module:
+  mounts:
+  - source: assets
+    target: assets
+  - source: static
+    target: assets
