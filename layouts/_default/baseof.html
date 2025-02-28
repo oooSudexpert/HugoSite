@@ -8,7 +8,7 @@
     <div class="flex-grow-1 flex-shrink-0">
       <header>
         {{ partial "navbar" . }}
-        {{ if not .IsNode }}
+        {{ if not .IsHome }}
         {{ partial "breadcrumb" . }}
         {{ end }}  
         {{ block "title_override" . }}
@@ -21,7 +21,11 @@
           </div>
         </div>    
       </header>  
-      <main class="main-{{ .Type }}">
+      {{ if .IsHome }}
+      <main class="main-home-page">
+      {{ else }}
+      <main class="main-{{ .Type }}"></main>
+      {{ end }}
         {{ block "main" . }}
         {{ end }}        
       </main>

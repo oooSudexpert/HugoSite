@@ -11,7 +11,7 @@ tags:
   - ДТП
 ---
 
-![image alt text](banner.jpeg)
+![image alt text](banner.jpeg "Title")
 
 II. Требования, которым должно отвечать жилое помещение
 
