@@ -1,10 +1,9 @@
-name: GitHub Pages
+name: GitHub Hugo Build
 
 on:
   push:
     branches:
       - master  # Set a branch to deploy
-  pull_request:
 
 jobs:
   deploy:
@@ -24,4 +23,4 @@ jobs:
           extended: true
 
       - name: Build
-        run: hugo --minify
+        run: hugo build --minify
