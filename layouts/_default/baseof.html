@@ -8,9 +8,7 @@
     <div class="flex-grow-1 flex-shrink-0">
       <header>
         {{ partial "navbar" . }}
-        {{ if not .IsHome }}
         {{ partial "breadcrumb" . }}
-        {{ end }}  
         {{ block "title_override" . }}
         <div class="{{ .Site.Params.container }}">
           <div class="text-center py-5">{{ end }}
@@ -24,7 +22,7 @@
       {{ if .IsHome }}
       <main class="main-home-page">
       {{ else }}
-      <main class="main-{{ .Type }}"></main>
+      <main class="main-{{ .Type }}">
       {{ end }}
         {{ block "main" . }}
         {{ end }}        

@@ -1,4 +1,7 @@
 {{ "<!-- partials/breadcrumb.html -->" | safeHTML }}
+
+{{ if or (and (eq .Page.Type "services") (ne .Page.Path "/services")) (and (eq .Page.Type "posts") (ne .Page.Path "/posts")) }}
+
 <div class="{{ .Site.Params.container }}">
   <nav style="--bs-breadcrumb-divider: '>';" aria-label="Хлебные крошки">
     <ol class="breadcrumb p-2">
@@ -15,3 +18,5 @@
     </ol>
   </nav>
 </div>
+
+{{ end }} 

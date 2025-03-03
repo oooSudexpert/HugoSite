@@ -11,6 +11,7 @@
   <div class="{{ .Site.Params.container }}">
     {{ range .Pages }}
     <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+    <p>{{ .Summary }}</p>
     {{ end }}
   </div> 
 {{ end }}

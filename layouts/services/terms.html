@@ -5,6 +5,7 @@
     {{ range .Pages }}      
       <div class="gallery-card">        
         <h3><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
+        <p>{{ .Description }}</p>
         {{ with .Resources.GetMatch "banner*" }}
           {{ with .Resize "400x" }}
             <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="">
