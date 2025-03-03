@@ -1,7 +1,7 @@
 title:              Судэксперт
 baseURL:            /
 languageCode:       ru
-publishDir:         public
+publishDir:         public/dev
 enableRobotsTXT:    true
 disableKinds:       ['404', 'RSS']
 metaDataFormat:     yaml
