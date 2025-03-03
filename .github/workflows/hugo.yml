@@ -23,7 +23,7 @@ jobs:
           extended: true
 
       - name: Build tlt
-        run: hugo -e tlt --minify
+        run: hugo -e tlt --minify --cleanDestinationDir
       - name: Push to master branch
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
@@ -32,7 +32,7 @@ jobs:
           repository: public/tlt
 
       - name: Build smr
-        run: hugo -e smr --minify
+        run: hugo -e smr --minify --cleanDestinationDir
       - name: Push to master branch
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
@@ -41,7 +41,7 @@ jobs:
           repository: public/smr
 
       - name: Build msk
-        run: hugo -e msk --minify
+        run: hugo -e msk --minify --cleanDestinationDir
       - name: Push to master branch
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
