@@ -22,12 +22,12 @@ jobs:
           hugo-version: 'latest'
           extended: true
 
-      - name: Build tlt
-        run: hugo -e tlt --minify
+      - name: Build
+        run: hugo --minify
 
       - name: Push to master branch
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Actions: Hugo build"
           branch: master
-          repository: public/tlt
+          repository: public/dev
