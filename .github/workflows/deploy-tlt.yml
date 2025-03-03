@@ -2,11 +2,10 @@ name: Deploy sudexpert.ooo website to Yandex Object Storage
 on:
     push:
         branches:
-            - master
+            - master            
 jobs:
     deploy:
         runs-on: ubuntu-latest
-        environment: production
         strategy:
             matrix:
                 node-version: [16.x]
@@ -14,17 +13,22 @@ jobs:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
               with:
-                  node-version: ${{ matrix.node-version }}    
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Set up env
+              run: cp .env.ci .env 
+    
             - name: Install NPM dependencies
-              run: npm@5 ci
+              run: npm ci
     
             - name: Build application
               run: npm run build
     
-            - uses: MrMeison/yc-object-storage-action@main
+            - uses: sergeevpasha/yandex-cloud-s3-sync-github-actions@v0.1.0
               with:
-                accessKeyId: ${{ secrets.ACCESS_KEY_ID }}
-                secretAccessKey: ${{ secrets.SECRET_ACCESS_KEY }}
-                bucketName: ${{ secrets.BUCKET }}
-                sourceDir: ./public/tlt
-                clear: true
+                YANDEX_CLOUD_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
+                YANDEX_CLOUD_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
+                YANDEX_CLOUD_BUCKET_NAME: ${{ secrets.BUCKET }}
+                YANDEX_CLOUD_REGION: ru-central1-a
+                PATH: "./public/tlt"
+                CLEAR: true
