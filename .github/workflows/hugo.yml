@@ -23,11 +23,11 @@ jobs:
           extended: true
 
       - name: Build
-        run: hugo --minify
+        run: hugo -e production --minify
 
-      - name: Commit and push to the gh-pages branch
-        uses: stefanzweifel/git-auto-commit-action@v4
+      - name: Commit and push to the master branch
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "actions: publish website"
+          commit_message: "Actions: Hugo build"
           branch: master
           repository: public/
