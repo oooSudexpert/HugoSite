@@ -1,0 +1,21 @@
+title:              Судэксперт
+baseURL:            /
+publishDir:         public/smr
+
+params:
+  city:             Самара
+  subtitle:         Все виды экспертиз
+  description:      Судебная экспертиза и инициативные исследования любого уровня сложности. Рецензирование заключений экспертов.
+  authors:          Степан Горшенин, Сергей Кежаев, и другие...
+  contact:
+    phone:          '+7 (8482) 63-12-88'
+    email:          sud163@ya.ru
+  social:
+    telegram:       '+79278993777'
+    whatsapp:       '+79278993777'
+  map:
+    latitude:       53.544781
+    longitude:      49.347234
+
+build:
+  _merge: deep
