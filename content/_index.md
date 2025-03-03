@@ -1,5 +1,5 @@
 ---
 title: Главная
-description: Самая главная страница.
+description: Самая главная страница сайта.
 layout: home
 ---
