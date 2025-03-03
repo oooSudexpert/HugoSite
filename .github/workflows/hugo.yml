@@ -19,7 +19,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: 'latest'
+          hugo-version: '0.145.0'
           extended: true
 
       - name: Build tlt
@@ -47,5 +47,4 @@ jobs:
         with:
           commit_message: "Actions: Hugo build"
           branch: master
-          repository: public/msk
-      
+          repository: public/msk     

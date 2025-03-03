@@ -1,17 +1,13 @@
 {{ with resources.Get "sass/main.scss" }}
   {{ $opts := dict
-    "enableSourceMap" (not hugo.IsProduction)
-    "outputStyle" (cond hugo.IsProduction "compressed" "expanded")
+    "enableSourceMap" false
+    "outputStyle" "compressed"
     "targetPath" "css/main.css"
     "transpiler" "libsass"
   }}
   {{ with . | toCSS $opts }}
-    {{ if hugo.IsProduction }}
-      {{ with . | minify | fingerprint }}
-        <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-      {{ end }}
-    {{ else }}
-      <link rel="stylesheet" href="{{ .RelPermalink }}">
+    {{ with . | minify | fingerprint }}
+      <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
     {{ end }}
   {{ end }}
 {{ end }} 
