@@ -25,7 +25,9 @@ jobs:
       - name: Build
         run: hugo --minify
 
-      - uses: actions/upload-artifact@master
+      - name: Commit and push to the gh-pages branch
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          name: website
-          path: './public'
+          commit_message: "actions: publish website"
+          branch: master
+          repository: public/
