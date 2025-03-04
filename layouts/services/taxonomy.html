@@ -1,9 +1,16 @@
-{{ define "title_override" }}
+{{ define "title" }}
   {{ with .Resources.GetMatch "banner*" }}
   <div class="service-banner" style="background-image: url({{.RelPermalink}})" >
   {{ end }}
-  <div class="{{ .Site.Params.container }}  d-flex">
-    <div class="text-center bg-light  bg-opacity-75 mx-auto my-auto p-4">
+    <div class="{{ .Site.Params.container }}  d-flex">
+      <div class="text-center bg-light  bg-opacity-75 mx-auto my-auto p-4">
+        <div>
+          <h1 class="display-1 text-uppercase mb-3">{{ .Title }}</h1>
+          <p class="lead mb-4">{{ .Description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 {{ end }}
 
 {{ define "main" }}
@@ -14,17 +21,15 @@
     <p>{{ .Summary }}</p>
     {{ end }}
   </div>
-  <div class="{{ .Site.Params.container }} text-center py-5">
-    {{ $taxonomy := .Section }}
-    {{ $terms := (where .Site.Pages "Type" "in" $taxonomy).ByWeight }}
-    {{ with $terms.Prev . }}
-    <a href="{{ .RelPermalink }}"><<< {{ .Title }}</a>
-    {{ end }}
-    <span>
-      {{ partial "icons/clock.svg" (dict "width" "24" "height" "24" "class" "bi bi-clock mx-3") }}
-    </span>
-    {{ with $terms.Next . }}
-    <a href="{{ .RelPermalink }}">{{ .Title }} >>></a>
-    {{ end }}
+  <div class="{{ .Site.Params.container }} py-5">
+    <ul>
+      {{ range $name, $taxonomy := .Site.Taxonomies.services }}
+          {{ with $.Site.GetPage (printf "/services/%s" $name) }}
+              <li><a href="{{ .Permalink }}">{{ $name }}</a>
+                <p>{{ .Description }}</p>
+              </li>
+          {{ end }}
+      {{ end }}
+    </ul>
   </div>
 {{ end }}
