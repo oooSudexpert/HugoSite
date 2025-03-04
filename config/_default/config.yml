@@ -7,6 +7,7 @@ disableKinds: ["404", "RSS"]
 metaDataFormat: yaml
 
 params:
+  lang: ru
   city: Тольятти
   subtitle: Все виды экспертиз
   description: Судебная экспертиза и инициативные исследования любого уровня сложности. Рецензирование заключений экспертов.

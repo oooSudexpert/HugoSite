@@ -1,6 +1,6 @@
 {{ "<!-- partials/breadcrumb.html -->" | safeHTML }}
 
-{{ if or (and (eq .Page.Type "services") (ne .Page.Path "/services")) (and (eq .Page.Type "posts") (ne .Page.Path "/posts")) }}
+{{ if or (and (eq .Page.Type "services") (eq .Page.Kind "term")) (and (eq .Page.Type "posts") (eq .Page.Kind "page")) }}
 
 <div class="{{ .Site.Params.container }}">
   <nav style="--bs-breadcrumb-divider: '>';" aria-label="Хлебные крошки">

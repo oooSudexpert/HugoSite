@@ -5,7 +5,7 @@ summary: Это просто супер
 date: 2025-03-04
 slug: the-threed-examination
 services:
-  - Автотехническая
+  - Давности документа
 tags:
   - Завещание
 ---

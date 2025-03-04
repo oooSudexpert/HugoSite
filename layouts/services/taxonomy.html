@@ -23,12 +23,15 @@
   </div>
   <div class="{{ .Site.Params.container }} py-5">
     <ul>
+      {{ $curentName := lower .Name }}
       {{ range $name, $taxonomy := .Site.Taxonomies.services }}
-          {{ with $.Site.GetPage (printf "/services/%s" $name) }}
-              <li><a href="{{ .Permalink }}">{{ $name }}</a>
-                <p>{{ .Description }}</p>
-              </li>
-          {{ end }}
+        {{ with $.Site.GetPage (printf "/services/%s" $name) }}
+        {{ if ne $curentName (lower $name) }}
+          <li><a href="{{ .Permalink }}">{{ $name }}</a>
+              <p>{{ .Description }}</p>
+          </li>
+        {{ end }}
+      {{ end }}
       {{ end }}
     </ul>
   </div>
