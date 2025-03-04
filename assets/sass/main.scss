@@ -11,7 +11,7 @@ $dark: #0a3622;
 $font-family-base: 'Roboto', sans-serif;
 $enable-negative-margins: true;
 $grid-gutter-width: 3rem;
-    
+
 @import "bootstrap_theme";
 
 html {
@@ -29,16 +29,16 @@ html, body {
     background-repeat: no-repeat;
     &> .container {
         min-height: 700px;
-    }    
+    }
 }
 
 .gallery {
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: center; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 30px;
     &> .gallery-card {
-        flex-basis: 350px;
+        flex-basis: 360px;
     }
 }
 
@@ -119,7 +119,7 @@ a:hover .bi.bi-whatsapp {
 
 .breadcrumb {
     a {
-        color: inherit;        
+        color: inherit;
         &:hover {
             color: $primary;
             text-decoration: underline!important;

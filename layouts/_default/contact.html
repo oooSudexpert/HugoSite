@@ -5,6 +5,6 @@
   {{ partial "blocks/contactdetails" . }}
   {{ partial "blocks/contactform" (dict "ShowMessageInput" false "City" .Site.Params.city) }}
   {{ partial "blocks/contactform" (dict "ShowMessageInput" true "City" .Site.Params.city) }}
-</div>
+      </div>
 {{ partial "blocks/yandexmap" . }}
 {{ end }}
