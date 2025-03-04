@@ -1,6 +1,6 @@
 ### Hugo ###
 # Generated files by hugo
-/public/dev/**
+/public/**
 /resources/_gen/**
 
 ### Code ###
