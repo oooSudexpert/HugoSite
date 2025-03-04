@@ -57,3 +57,21 @@ jobs:
           bucket: ${{ secrets.BUCKET_TLT }}          
           working-directory: public/tlt
           clear: true
+          
+      - name: Deploy smr
+        uses: nekitcorp/yandex-storage-website-action@v2
+        with:
+          access-key-id: ${{ secrets.ACCESS_KEY_ID }}
+          secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
+          bucket: ${{ secrets.BUCKET_SMR }}          
+          working-directory: public/smr
+          clear: true
+
+      - name: Deploy msk
+        uses: nekitcorp/yandex-storage-website-action@v2
+        with:
+          access-key-id: ${{ secrets.ACCESS_KEY_ID }}
+          secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
+          bucket: ${{ secrets.BUCKET_MSK }}          
+          working-directory: public/msk
+          clear: true
