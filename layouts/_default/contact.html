@@ -1,7 +1,6 @@
 {{ define "main" }}
 {{ "<!-- default/contact.html -->" | safeHTML }}
 <div class="{{ .Site.Params.container }}">
-  <pre>{{ debug.Dump . }}</pre>
   {{ .Content }}
   {{ partial "blocks/contactdetails" . }}
   {{ partial "blocks/contactform" (dict "ShowMessageInput" false "City" .Site.Params.city) }}
