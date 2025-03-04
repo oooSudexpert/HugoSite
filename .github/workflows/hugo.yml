@@ -52,8 +52,8 @@ jobs:
       - name: Deploy tlt
         uses: nekitcorp/yandex-storage-website-action@v2
         with:
-          accessKeyId: ${{ secrets.ACCESS_KEY_ID }}
-          secretAccessKey: ${{ secrets.SECRET_ACCESS_KEY }}
+          access-key-id: ${{ secrets.ACCESS_KEY_ID }}
+          secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
           bucket: ${{ secrets.BUCKET_TLT }}          
           working-directory: public
           include: tlt/**
