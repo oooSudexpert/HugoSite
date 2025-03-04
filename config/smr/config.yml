@@ -8,14 +8,14 @@ params:
   description:      Судебная экспертиза и инициативные исследования любого уровня сложности. Рецензирование заключений экспертов.
   authors:          Степан Горшенин, Сергей Кежаев, и другие...
   contact:
-    phone:          '+7 (8482) 63-12-88'
+    phone:          '+7 (846) 989-03-51'
     email:          sud163@ya.ru
   social:
-    telegram:       '+79278993777'
-    whatsapp:       '+79278993777'
+    telegram:       '+79278999970'
+    whatsapp:       '+79278999970'
   map:
-    latitude:       53.544781
-    longitude:      49.347234
+    latitude:       53.224309
+    longitude:      50.193016
 
 build:
   _merge: deep
