@@ -2,9 +2,9 @@
 {{ "<!-- default/contact.html -->" | safeHTML }}
   <div class="{{ .Site.Params.container }}">
     {{ .Content }}
-    {{ partial "contactdetails" . }}
-    {{ partial "contactform" (dict "ShowMessageInput" false "City" .Site.Params.city) }}
-    {{ partial "contactform" (dict "ShowMessageInput" true "City" .Site.Params.city) }}      
+    {{ partial "blocks/contactdetails" . }}
+    {{ partial "blocks/contactform" (dict "ShowMessageInput" false "City" .Site.Params.city) }}
+    {{ partial "blocks/contactform" (dict "ShowMessageInput" true "City" .Site.Params.city) }}      
   </div>
-  {{ partial "yandexmap" . }}
+  {{ partial "blocks/yandexmap" . }}
 {{ end }}

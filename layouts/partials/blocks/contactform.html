@@ -1,9 +1,10 @@
-<form class="contact-form" data-city="{{ .City }}" novalidate>
+<form class="contact-form needs-validation" data-city="{{ .City }}" novalidate>
     <input type="text" name="Username" class="robot-text" autocomplete="off" pattern=".{0,0}" />
     <input type="text" name="Phone" class="form-control form-control-lg  mt-3" aria-label="Номер телефона для обратной связи" placeholder="Ваш номер телефона" autocomplete="tel-country-code" pattern="^[\+0-9\s\(\)\-]{18,18}" required />
+    <div class="invalid-feedback">Введите номер телефона</div>
     {{ if .ShowMessageInput }}
     <textarea style="height: 200px" name="Message" class="form-control form-control-lg  mt-3" aria-label="Вопрос, который вы хотите задать" placeholder="Ваш вопрос..." required></textarea>
+    <div class="invalid-feedback">Введите сообщение</div>
     {{ end }}    
     <button type="submit" class="btn btn-lg btn-primary  mt-3">Отправить</button>
-    <p class="text-muted mt-3"><small>Отправляя данные, вы соглашаетесь с <a href="/privacy">политикой конфиденциальности</a></small></p>
 </form>
