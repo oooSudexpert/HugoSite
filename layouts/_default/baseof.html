@@ -4,7 +4,7 @@
     {{ partial "header" . }}
     {{ partial "styles" . }}
   </head>
-  <body class="d-flex flex-column min-vh-100">  
+  <body class="d-flex flex-column min-vh-100">
     <div class="flex-grow-1 flex-shrink-0">
       <header>
         {{ partial "navbar" . }}
@@ -17,15 +17,15 @@
               <p class="lead mb-4">{{ .Description }}</p>
             </div>
           </div>
-        </div>    
-      </header>  
+        </div>
+      </header>
       {{ if .IsHome }}
       <main class="main-home-page">
       {{ else }}
       <main class="main-{{ .Type }}">
       {{ end }}
         {{ block "main" . }}
-        {{ end }}        
+        {{ end }}
       </main>
     </div>
     <footer class="flex-grow-0 flex-shrink-0 py-3 bg-light border-top text-muted">

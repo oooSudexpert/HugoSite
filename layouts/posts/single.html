@@ -2,5 +2,17 @@
 {{ "<!-- posts/single.html -->" | safeHTML }}
   <div class="{{ .Site.Params.container }}">
     {{ .Content }}
-  </div>    
+  </div>
+  <div class="{{ .Site.Params.container }} text-center py-5">
+    {{ $pages := .CurrentSection.Pages.ByDate }}
+    {{ with $pages.Prev . }}
+    <a href="{{ .RelPermalink }}"><<< {{ .Title }}</a>
+    {{ end }}
+    <span>
+      {{ partial "icons/clock.svg" (dict "width" "24" "height" "24" "class" "bi bi-clock mx-3") }}
+    </span>
+    {{ with $pages.Next . }}
+    <a href="{{ .RelPermalink }}">{{ .Title }} >>></a>
+    {{ end }}
+  </div>
 {{ end }}

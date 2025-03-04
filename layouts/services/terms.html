@@ -1,9 +1,9 @@
 {{ define "main" }}
 {{ "<!-- services/terms.html -->" | safeHTML }}
   <div class="{{ .Site.Params.container }}">
-    <div class="gallery"> 
-    {{ range .Pages }}      
-      <div class="gallery-card">        
+    <div class="gallery">
+    {{ range .Pages }}
+      <div class="gallery-card">
         <h3><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
         <p>{{ .Description }}</p>
         {{ with .Resources.GetMatch "banner*" }}
@@ -14,5 +14,5 @@
       </div>
     {{ end }}
     </div>
-  </div> 
+  </div>
 {{ end }}

@@ -1,2 +1,43 @@
-Адрес
-Время работы
+{{ $sizeIcon := "24" }}
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-7 col-xl-7 mb-3">
+      <h3>Контакты</h3>
+      <div id="block-details" class="row">
+        <div class="col-12 mt-2">
+          {{ partial "icons/telephone.svg" (dict "width" $sizeIcon "height"
+          $sizeIcon "class" "bi bi-telephone me-2") }} {{
+          .Site.Params.contact.phone }}
+        </div>
+        <div class="col-12 mt-2">
+          {{ partial "icons/envelope.svg" (dict "width" $sizeIcon "height"
+          $sizeIcon "class" "bi bi-envelope me-2") }} {{
+          .Site.Params.contact.email }}
+        </div>
+        <div class="col-12 mt-2">
+          {{ partial "icons/geo-alt.svg" (dict "width" $sizeIcon "height"
+          $sizeIcon "class" "bi bi-geo-alt me-2") }}
+          <span class="d-none d-sm-inline-block">
+            {{ .Site.Params.contact.postalCode }},
+          </span>
+          {{ .Site.Params.contact.city }}, {{ .Site.Params.contact.adress }}
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-5 col-xl-5 mb-3">
+      <h3>Время работы</h3>
+      <div class="row">
+        <div class="col-12 mt-2">
+          {{ partial "icons/telephone-inbound.svg" (dict "width" $sizeIcon
+          "height" $sizeIcon "class" "bi bi-telephone-inbound me-2") }} Прием
+          заявок: круглосуточно 24/7
+        </div>
+        <div class="col-12 mt-2">
+          {{ partial "icons/clock.svg" (dict "width" $sizeIcon "height"
+          $sizeIcon "class" "bi bi-clock me-2") }} Прием посетителей: Пн-Пт 9:00
+          - 18:00
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

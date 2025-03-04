@@ -1,21 +1,23 @@
-title:              Судэксперт
-baseURL:            /
-publishDir:         public/msk
+title: Судэксперт
+baseURL: /
+publishDir: public/msk
 
 params:
-  city:             Москва
-  subtitle:         Все виды экспертиз
-  description:      Судебная экспертиза и инициативные исследования любого уровня сложности. Рецензирование заключений экспертов.
-  authors:          Степан Горшенин, Сергей Кежаев, и другие...
+  city: Москва
+  subtitle: Все виды экспертиз
+  description: Судебная экспертиза и инициативные исследования любого уровня сложности. Рецензирование заключений экспертов.
+  authors: Степан Горшенин, Сергей Кежаев, и другие...
   contact:
-    phone:          '+7 (903) 137-56-58'
-    email:          Ex.63@yandex.ru
+    phone: "+7 (903) 137-56-58"
+    email: Ex.63@yandex.ru
+    postalCode: 127006
+    adress: ул.Долгоруковская, 15с4-5, 2эт.
   social:
-    telegram:       '+79276195082'
-    whatsapp:       '+79276195082'
+    telegram: "+79276195082"
+    whatsapp: "+79276195082"
   map:
-    latitude:       55.774369
-    longitude:      37.602987
+    latitude: 55.774369
+    longitude: 37.602987
 
 build:
   _merge: deep

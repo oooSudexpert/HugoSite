@@ -1,6 +1,6 @@
 {{ define "title_override" }}
   {{ with .Resources.GetMatch "banner*" }}
-  <div class="service-banner" style="background-image: url({{.RelPermalink}})" >    
+  <div class="service-banner" style="background-image: url({{.RelPermalink}})" >
   {{ end }}
   <div class="{{ .Site.Params.container }}  d-flex">
     <div class="text-center bg-light  bg-opacity-75 mx-auto my-auto p-4">
@@ -13,5 +13,18 @@
     <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
     <p>{{ .Summary }}</p>
     {{ end }}
-  </div> 
+  </div>
+  <div class="{{ .Site.Params.container }} text-center py-5">
+    {{ $taxonomy := .Section }}
+    {{ $terms := (where .Site.Pages "Type" "in" $taxonomy).ByWeight }}
+    {{ with $terms.Prev . }}
+    <a href="{{ .RelPermalink }}"><<< {{ .Title }}</a>
+    {{ end }}
+    <span>
+      {{ partial "icons/clock.svg" (dict "width" "24" "height" "24" "class" "bi bi-clock mx-3") }}
+    </span>
+    {{ with $terms.Next . }}
+    <a href="{{ .RelPermalink }}">{{ .Title }} >>></a>
+    {{ end }}
+  </div>
 {{ end }}
