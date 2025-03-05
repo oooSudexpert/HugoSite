@@ -1,16 +1,21 @@
 {{ define "main" }}
 {{ "<!-- services/terms.html -->" | safeHTML }}
   <div class="{{ .Site.Params.container }}">
-    <div class="gallery">
+    <div class="row justify-content-center">
     {{ range .Pages }}
-      <div class="gallery-card">
-        <h3><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
-        <p>{{ .Description }}</p>
-        {{ with .Resources.GetMatch "banner*" }}
-          {{ with .Resize "320x" }}
-            <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="">
+      <div class="col-xxl-4 col-md-6 col-sm-12">
+        <div class="card">
+          {{ with .Resources.GetMatch "banner*" }}
+          {{ with .Resize "460x webp" }}
+          <img src="{{ .RelPermalink }}" class="img-fluid" alt="">
           {{ end }}
-        {{ end }}
+          {{ end }}
+          <div class="card-img-overlay bg-black p-2 text-white bg-opacity-50">
+            <h2 class="card-title">{{ .LinkTitle }}</h2>
+            <p class="card-text">{{ .Description }}</p>
+            <a href="{{ .RelPermalink }}" class="btn btn-primary">Подробнее</a>
+          </div>
+        </div>
       </div>
     {{ end }}
     </div>

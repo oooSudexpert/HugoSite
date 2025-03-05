@@ -24,7 +24,7 @@ params:
   map:
     latitude: 53.544781
     longitude: 49.347234
-  container: container
+  container: container-fluid
 
   current_version: 1.0.1
   github_org: https://github.com/oooSudexpert/HugoSite

@@ -1,23 +1,33 @@
 {{/*  {{ partial "image.html" (dict "src" "images/example.jpg" "alt" "Описание изображения" "class" "img-fluid" "Page" .) }}  */}}
 
-{{ $image := .Page.Resources.GetMatch (.Get "src") }}
-{{ $alt := .Get "alt" }}
-{{ $class := .Get "class" | default "img-fluid" }}
+{{ $src := .src }} <!-- Путь к изображению -->
+{{ $alt := .alt }} <!-- Альтернативный текст -->
+{{ $class := .class | default "img-fluid" }} <!-- Класс по умолчанию -->
+{{ $page := .page }} <!-- Контекст текущей страницы -->
 
+<!-- Пытаемся найти изображение в ресурсах страницы -->
+{{ $image := $page.Resources.GetMatch $src }}
+
+<!-- Если изображение не найдено в ресурсах страницы, ищем в глобальных ресурсах -->
+{{ if not $image }}
+  {{ $image = resources.GetMatch $src }}
+{{ end }}
+
+<!-- Если изображение найдено, обрабатываем его -->
 {{ if $image }}
-  {{ $small := $image.Resize "576x webp" }}
+  {{ $small := $image.Resize "576x webp" }} <!-- Изменено с 480 на 576 -->
   {{ $medium := $image.Resize "768x webp" }}
   {{ $large := $image.Resize "992x webp" }}
   {{ $xlarge := $image.Resize "1200x webp" }}
-  {{ $xxlarge := $image.Resize "1920x webp" }}
+  {{ $xxlarge := $image.Resize "1920x webp" }} <!-- Добавлено xxlarge -->
 
   <picture>
     <!-- Источники для разных разрешений -->
-    <source srcset="{{ $small.RelPermalink }}" media="(max-width: 576px)" type="image/webp">
+    <source srcset="{{ $small.RelPermalink }}" media="(max-width: 576px)" type="image/webp"> <!-- Изменено на 576 -->
     <source srcset="{{ $medium.RelPermalink }}" media="(max-width: 768px)" type="image/webp">
     <source srcset="{{ $large.RelPermalink }}" media="(max-width: 992px)" type="image/webp">
     <source srcset="{{ $xlarge.RelPermalink }}" media="(max-width: 1200px)" type="image/webp">
-    <source srcset="{{ $xxlarge.RelPermalink }}" media="(min-width: 1201px)" type="image/webp">
+    <source srcset="{{ $xxlarge.RelPermalink }}" media="(min-width: 1201px)" type="image/webp"> <!-- Добавлено xxlarge -->
 
     <!-- Fallback для браузеров, которые не поддерживают <picture> или WebP -->
     <img
@@ -28,5 +38,6 @@
     >
   </picture>
 {{ else }}
-  <p>Изображение не найдено: {{ .Get "src" }}</p>
+  <!-- Если изображение не найдено, выводим стандартный тег img -->
+  <img src="{{ $src }}" alt="{{ $alt }}" class="{{ $class }}" loading="lazy">
 {{ end }}

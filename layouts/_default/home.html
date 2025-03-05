@@ -2,6 +2,20 @@
 {{ "<!-- default/home.html -->" | safeHTML }}
   <div class="{{ .Site.Params.container }}">
     {{ .Content }}
+
+
+    <div class="card">
+      <!-- Изображение -->
+      {{ partial "image" (dict "src" "images/bg/bg-callback.jpg" "alt" "Описание изображения" "class" "card-img" "Page" .) }}
+      <!-- Текст и кнопка поверх изображения -->
+      <div class="card-img-overlay bg-black p-2 text-white bg-opacity-50">
+        <h1 class="card-title">Заголовок</h1>
+        <p class="card-text">Подзаголовок или краткое описание</p>
+        <a href="#" class="btn btn-primary">Подробнее</a>
+      </div>
+    </div>
+
+
     {{ range .Pages }}
     <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
     {{ end }}
