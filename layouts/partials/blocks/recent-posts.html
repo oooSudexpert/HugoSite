@@ -1,0 +1,11 @@
+{{ $posts := where .Site.Pages "Type" "posts" }}
+{{ $recentPosts := first 6 (sort $posts "Date" "desc") }}
+
+<ul>
+  {{ range $recentPosts }}
+    <li>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      <span>{{ .Date.Format "2006-01-02" }}</span>
+    </li>
+  {{ end }}
+</ul>

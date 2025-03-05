@@ -1,5 +1,15 @@
-{{ $imaskJs := resources.Get "js/imask.min.js" }}
-<script src="{{ $imaskJs.RelPermalink }}"></script>
+{{/*  {{ $imaskJs := resources.Get "js/imask.min.js" }}
+<script src="{{ $imaskJs.RelPermalink }}"></script>  */}}
 
-{{ $mainJs := resources.Get "js/main.js" | js.Build "js/main.js" | minify | fingerprint }}
+{{ $mainJs := resources.Get "js/bootstrap.js" | js.Build "js/bootstrap.js" | minify | fingerprint }}
 <script src="{{ $mainJs.RelPermalink }}"></script>
+
+{{ with resources.Get "ts/main.ts" }}
+  {{ $opts := dict
+    "minify" true
+    "targetPath" "js/main.js"
+  }}
+  {{ with . | js.Build $opts | minify | fingerprint }}
+  <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
+  {{ end }}
+{{ end }}

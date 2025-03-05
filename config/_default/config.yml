@@ -45,7 +45,7 @@ menus:
     - name: Главная
       pageRef: /
       weight: 10
-    - name: Услуги
+    - name: Экспертиза
       pageRef: /services
       weight: 20
     - name: Статьи
