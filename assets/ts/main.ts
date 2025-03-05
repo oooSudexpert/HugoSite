@@ -71,8 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
           const url = new URL('https://functions.yandexcloud.net/d4ehgtkcf9e302257mjc');
           url.searchParams.append('city', city);
           url.searchParams.append('phone', phone);
-          url.searchParams.append('message', message);
-          console.log(message);
+          if ( message.length > 0 ) {
+            url.searchParams.append('message', message);
+          }
           // Отправляем GET-запрос
           const response = await fetch(url.toString(), {
               method: 'GET',

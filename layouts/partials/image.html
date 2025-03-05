@@ -1,4 +1,9 @@
-{{ $image := .Page.Resources.GetMatch .Destination }}
+{{/*  {{ partial "image.html" (dict "src" "images/example.jpg" "alt" "Описание изображения" "class" "img-fluid" "Page" .) }}  */}}
+
+{{ $image := .Page.Resources.GetMatch (.Get "src") }}
+{{ $alt := .Get "alt" }}
+{{ $class := .Get "class" | default "img-fluid" }}
+
 {{ if $image }}
   {{ $small := $image.Resize "576x webp" }}
   {{ $medium := $image.Resize "768x webp" }}
@@ -15,15 +20,13 @@
     <source srcset="{{ $xxlarge.RelPermalink }}" media="(min-width: 1201px)" type="image/webp">
 
     <!-- Fallback для браузеров, которые не поддерживают <picture> или WebP -->
-    {{ $class := .Attributes.class | default "img-fluid" }}
     <img
       src="{{ $image.RelPermalink }}"
-      alt="{{ .Text }}"
+      alt="{{ $alt }}"
       class="{{ $class }}"
       loading="lazy"
     >
   </picture>
 {{ else }}
-  <!-- Если изображение не найдено, выводим стандартный тег img -->
-  <img src="{{ .Destination }}" alt="{{ .Text }}" class="img-fluid" loading="lazy">
+  <p>Изображение не найдено: {{ .Get "src" }}</p>
 {{ end }}

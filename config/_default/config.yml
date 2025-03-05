@@ -3,6 +3,7 @@ baseURL: /
 languageCode: ru
 publishDir: public/dev
 enableRobotsTXT: true
+titleCaseStyle: firstupper
 disableKinds: ["404", "RSS"]
 metaDataFormat: yaml
 

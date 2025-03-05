@@ -1,5 +1,6 @@
 ### Hugo ###
 # Generated files by hugo
+/assets/jsconfig.json
 /public/**
 /resources/_gen/**
 /node_modules/**
